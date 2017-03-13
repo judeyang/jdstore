@@ -13,5 +13,9 @@ root 'products#index'
     end
 end
 
-  resources :carts
+  resources :carts do
+    collection do
+      delete :clean
+    end
+  end
 end
