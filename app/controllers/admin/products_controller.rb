@@ -4,6 +4,9 @@ layout "admin"
 before_action :authenticate_user!
 before_action :admin_required
 
+def new
+  @product = Product.new
+end
 
 def index
   @products = Product.all
@@ -40,6 +43,5 @@ end
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price)
-  end
+params.require(:product).permit(:title, :description, :quantity, :price, :image)  end
 end
