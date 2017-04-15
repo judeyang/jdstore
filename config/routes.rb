@@ -21,4 +21,14 @@ end
   end
 resources :cart_items
 resources :orders
+
+namespace :account do
+  resources :orders do
+    member do
+      post :pay_with_alipay
+      post :pay_with_wechat
+    end
+  end
+ end
+
 end
